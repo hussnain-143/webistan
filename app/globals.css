@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(233, 170, 41, 0.08), transparent 24%),
+    linear-gradient(180deg, #ffffff 0%, #fcfaf6 100%);
+  font-feature-settings: "ss01" on, "cv05" on, "cv11" on;
+}
+
+::selection {
+  background: rgba(233, 170, 41, 0.25);
+  color: #171717;
+}
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+
+  body {
+    @apply text-base leading-7 text-ink;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-balance font-display tracking-[-0.03em] text-ink;
+  }
+
+  p {
+    @apply text-slateWarm;
+  }
+
+  a,
+  button {
+    @apply transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .surface {
+    @apply rounded-[28px] border border-white/80 bg-white shadow-soft backdrop-blur;
+    background-color: rgba(255, 255, 255, 0.92);
+  }
+
+  .surface-dark {
+    @apply rounded-[28px] border border-white/10 bg-[#1d1d1b] text-white shadow-panel;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-24 lg:py-28;
+  }
+
+  .mesh-bg {
+    background:
+      radial-gradient(circle at top left, rgba(233, 170, 41, 0.16), transparent 32%),
+      radial-gradient(circle at bottom right, rgba(23, 23, 23, 0.06), transparent 26%),
+      linear-gradient(180deg, rgba(255,255,255,0.98), rgba(246,241,232,0.92));
+  }
+
+  .image-shell {
+    @apply overflow-hidden rounded-[24px] bg-mist ring-1 ring-black/5;
+  }
+}
